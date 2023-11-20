@@ -1,0 +1,79 @@
+<!--
+    每一個標籤在畫面中各自佔據一個方形區塊
+    <div>Hello</div>
+    |-------|
+    | Hello |
+    |-------|
+    <div>Line1</div>
+    <div>Line2</div>
+    |-------|
+    | Line1 |
+    |-------|
+    |-------|
+    | Line2 |
+    |-------|
+    <div>這是<span>一枝筆</span><\div>
+    |--------------|
+    | 這是 |一枝筆| |
+    |--------------|
+-->
+<!--
+    每個區塊的內容與該區塊的邊框都有距離
+    該距離稱之為 "區塊填塞 Padding"
+    |-------|
+    | Hello |
+    |-------| ==>
+    |-----------|
+    |           |
+    |   Hello   |
+    |           |
+    |-----------|
+    <div style="paddiing:10px">Hello<div>
+    <div style="paddiing-top:10px">Hello<div>
+    <div style="paddiing-left:10px">Hello<div>
+    <div style="paddiing-right:10px">Hello<div>
+    <div style="paddiing-bottom:10px">Hello<div>
+-->
+<!--
+    區塊的邊框寬度、樣式、顏色
+    使用 "border" 來自定義邊框
+
+    相鄰區塊之間的邊距 外邊距 Margin
+    <div style="margin-bottom:10px">Line1</div>
+    <div>Line2</div>
+    |-------|
+    | Line1 |
+    |-------|
+    下方的外邊框距離10px
+    |-------|
+    | Line2 |
+    |-------|
+    <div>Line1</div>
+    <div style="margin-top:10px">Line2</div>
+    |-------|
+    | Line1 |
+    |-------|
+    上方的外邊框距離10px
+    |-------|
+    | Line2 |
+    |-------|
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS Box Model 區塊模型</title>
+    </head>
+    <body style="background-color:rgb(173, 205, 248);">
+        <div style="color: blue;
+        text-decoration:underline;
+        font-size:32px;
+        font-weight:bold;
+        margin-bottom:10px;">文章第一段的段落標題</div>
+
+        <div style="padding: 5px; width: 300px; color: rgb(221, 123, 2); border: 1px dashed black; ">
+                今天的<span style="color:red;">天氣</span>真是不錯
+        </div>
+    </body>
+</html>
