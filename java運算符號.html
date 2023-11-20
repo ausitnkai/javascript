@@ -1,0 +1,52 @@
+<!--
+    javascript的運算符號，可以對資料進行某種操作的符號:
+        1. 算術運算 : 基本的運算操作
+            加+, 減-, 乘*, 除/, 取餘%
+        2. 指定運算 : 將計算過資料放進變數中
+            =, +=, -=, *=, /=, %=
+        3. 比較運算 : 比較資料大小得到布林值
+            大於>, 小於<, 大於等餘>=, 小於等於<=, 相等==
+        4. 單元運算 : 只對一個資料做運算
+            變數資料加一: ++ ; 變數資料減一: -- ; 布林值反運算: !
+        5. 邏輯運算 : 針對布林值運算
+            AND : && ; OR ||
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 算術運算 :
+        let y = 7%3;
+        console.log(y);
+        // 指定運算 :
+        y+=1; // y+1 這樣是不會有任何改變，因為並未賦予值給變數做使用
+        console.log(y);
+        // 比較運算 : 
+        x = "hello"=="hello"; // 會得出錯誤的結果=>false
+        console.log(x);
+        // 單元運算 : 
+        x = !x;
+        console.log(x);
+        x=3;
+        x++;
+        console.log(x);
+        // 邏輯運算 : 
+        let test1 = true||false;
+        let test2 = true&&true;
+        console.log(test1);
+        console.log(test2);
+        */
+
+        let n1=prompt("請輸入一個數字","請輸入"); // 這邊會得到的資料型態是字串
+        let n2=prompt("請輸入一個數字","請輸入");
+        let result = n1*n2;
+        console.log(result);
+    </script>
+</body>
+</html>
