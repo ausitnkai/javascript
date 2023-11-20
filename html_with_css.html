@@ -1,0 +1,68 @@
+<!--
+    CSS 屬性設定 
+    基本語法:
+    屬性名稱:屬性內容
+
+    設定文字顏色:
+    color:red
+    color:#0000ff
+
+    設定文字粗細:
+    font-weight:bold
+    font-weight:nomal
+
+    設定文字大小:
+    font-size:16px
+    font-size:2em ==> 預設文字大小的2倍大
+
+    同時設定多個屬性設定
+    用 "分號隔開":
+    font-wight:bold ; color:red
+
+    文字裝飾:
+    text-decoration:undline ==> 加底線
+    text-decoration:line-through ==> 文字的中間畫一條橫槓
+
+    文字在區塊中的對其方式:
+    text-align:center
+    text-aign:left
+-->
+<!--
+    透過 "style" 來套用CSS樣式
+    基本語法
+    <h3 style="CSS樣式">標題</h3>
+    <div style="CSS樣式">內容</div>
+    範例
+    <h3 style="color:red">標題</h3>
+    <div style="font-wight:bold;color:red">內容</div>
+
+    使用CSS樣式需要使用 "乾淨的" 標籤
+    <div>、<span> 指沒有預設樣式的標籤
+
+    標籤的顯示模式會決定標籤會如何被顯示在畫面上
+    行內模式 inline
+    <span>、<a>、<img>
+    區塊模式 block(自動換行)
+    <div>、<h1>~<h6>、<ul>、<table>
+    隱藏模式 none
+    額外透過CSS的 display 屬性
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>為網頁添加CSS樣式</title>
+    </head>
+    <body style="background-color:rgb(173, 205, 248);">
+        <div style="color: blue;
+        text-decoration:underline;
+        font-size:32px;
+        font-weight:bold">文章第一段的段落標題</div>
+
+        <div style="color: rgb(221, 123, 2);">
+            今天的<span style="color:red;">天氣</span>真是不錯
+        </div>
+    </body>
+</html>
