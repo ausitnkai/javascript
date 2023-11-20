@@ -1,0 +1,32 @@
+<!--
+    RWD(responsive web design)回應式設計
+    在不同大小的螢幕上，讓我們網頁版面都能夠正常顯示
+    例如: 手機與電腦會顯示的畫面效果應該要不一樣
+    Media Query 根據螢幕的寬度調整CSS的設定
+    基本與法:
+        @media(螢幕條件){
+            套用符合條件時的使用設定
+        }
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD 回應式網頁切換</title>
+    <link rel="stylesheet" type="text/css" href="RWD-layout.css"/>
+</head>
+<body>
+    <div class="headline">這是一個回應式網頁設計的範例</div>
+    <div class="desktop-menu">選項一，選項二，選項三</div>
+    <diV class="mobile-menu">
+        <img src="menu.svg" width="30" height="30"/>
+    </diV>
+    <div class="list">
+        <div class="product">產品1</div>
+        <div class="product">產品2</div>
+        <div class="product">產品3</div>
+    </div>
+</body>
+</html>
