@@ -12,17 +12,19 @@ window.alert("一個基本的網頁操作~~~~~");// 網頁的彈出式視窗
  let : 宣告一個可隨意更改其內容的 "區塊區域" 變數
  const : 宣告一個只可讀取的不可變常數
 
- 2. assigment 賦值 (= 賦予相對應的值)
+ 2. assigment 賦值 (變數名稱 = 資料)
 */
 
 let age = 20; //整數型別
 let firstName = "kai"; //字串型別
 let student = true; // 布林型別
-
+const nickname = "austin" //不可變動的常數
+//nickname = "alan"; 這個是錯誤的，當程式運行到這邊時就會強制中止
 
 console.log("Hello", firstName);
 console.log("You are", age, "years old.");
 console.log(student);
+console.log(nickname);
 
 document.getElementById("p1").innerHTML = "Hello " + firstName;
 document.getElementById("p2").innerHTML = "You are " + age + " years old.";
