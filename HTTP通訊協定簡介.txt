@@ -10,3 +10,8 @@
 *3* 網站前後端的互動基礎 ==> 透過網址，前端可以連線取得的資源
         1. 在瀏覽器網址列上輸入網址，按下 enter 取得網頁
         2. 可以採用 AJAX/XHR 技術執行 網址連線、取資料等動作
+
+*4* AJAX/XHR 利用 JavaScript 程式進行網路連線
+    1. 初期稱作 Asynchronous JavaScript And XML 技術
+    2. 中期使用 XMLHttpRequest 物件，稱為 XHR 技術
+    3. 近年，建議採用最新的 fetch 函式來執行網路連線功能
