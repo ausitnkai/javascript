@@ -1,0 +1,62 @@
+<!--
+    箭頭函式語法: 函式的另一種寫法，用 => 取代 function
+        普通函式語法 :
+            let 函式名稱=function(函數參數列表){
+                程式碼
+                return 回傳值;
+            };
+        
+        箭頭函式語法 :
+            let 函式名稱=(函數參數列表)=>{
+                程式碼
+                return 回傳值;
+            };
+        
+    **注意函式的本體、參數、回傳值主要的核心概念沒有變化**
+
+    當函式本體 /*只有回傳值敘述*/ ，沒有其值他指令時 *可簡化* :
+            let 函式名稱=(函數參數列表)=>(回傳值);
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭頭函式 Arrow Function</title>
+</head>
+<body>
+    <script>
+        // 計算累加的結果
+        let time = window.prompt("請輸入次數","");
+
+        /* 原先函式寫法
+        function cal(time) {
+            let result = 0;
+            let n = 1;
+            while(n<=time){
+                result += n;
+                n++;
+            }
+            return result;
+        }
+        */
+
+        // 箭頭函式建立 cal 函式
+        let cal = (time)=>{
+            let result = 0;
+            let n = 1;
+            while(n<=time){
+                result += n;
+                n++;
+            }
+            return result;
+        };
+        console.log(cal(time));
+
+        // 乘法的簡化版箭頭函式
+        let multiply=(n1,n2)=>(n1*n2);
+        console.log(multiply(3,4));
+    </script>
+</body>
+</html>
