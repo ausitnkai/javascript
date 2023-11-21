@@ -1,0 +1,57 @@
+<!--
+    建立函式:
+        function函式名稱(參數名稱列表){
+            函式內部程式區塊
+        }
+
+    呼叫函式:
+        函式名稱(參數名稱列表);
+
+    有關函式的回傳值:
+        使用 return 能夠強迫中止整個函式，
+        若 return 後面有接資料就會回傳該資料
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函式的基本概念</title>
+</head>
+<body>
+    <script>
+        /* 建立函式的方法一
+        function add(a, b) {
+            let result = a+b;
+            console.log(result);
+        }
+        let a=1, b=0;
+        for(let n=0; n < 5; n++){
+            //呼叫函式
+            add(a,b);
+            a++;
+            b++;
+        }
+        // 建立函式的方法二
+        let times = function(x,y){
+            let result = x*y;
+            console.log(result);
+        }
+        let x = window.prompt("請輸入任意數字","");
+        let y = window.prompt("請輸入任意數字","");
+        //呼叫函式
+        times(x,y);
+        */
+        let add=function(a,b){
+            let sum = a+b;
+            return sum;
+        }
+        
+        let result = add(5,4);
+        console.log(result);
+
+        result = add("Hello","world");
+        console.log(result);
+    </script>
+</body>
+</html>
