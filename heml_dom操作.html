@@ -1,0 +1,65 @@
+<!--
+    操作 window 物件:
+        隨時可用內建的window變數取得:
+            console.log(window)
+        window 物件包含有用的屬性:
+            window.innerWidth 紀錄視窗的寬度
+            window.innerHeight 紀錄視窗的高度
+            ....
+        window 物件包含有用的方法:
+            window.prompt("輸入資料", "預設值")
+            window.alert("彈出警告視窗")
+
+    操作 screen 物件, 內建的 screen 物件記錄使用者螢幕資訊:
+        screen 物件是 window 物件的一個屬性 :
+            window.screen
+        screen 物件包含有用的屬性 :
+            window.screen.width
+            window.screen.height
+            ...
+    
+    操作 document 物件, 內建的 document 物件代表網頁的主要內容:
+        document 物件是 window 物件的一個屬性 :
+            window.document 可簡寫成 document
+        document 物件包含有用的屬性 :
+            document.title
+            document.body
+            ...
+         document 物件包含有用的方法 :
+            document.querySeletor("CSS選擇器")
+-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-DOM基礎認識</title>
+</head>
+<body>
+    <script>
+        // 認識 window 物件 (HTML DOM 結構的最上層)
+        console.log(window);
+        // 取得視窗的寬度和高度
+        console.log(window.innerWidth, window.innerHeight);
+        // 取得螢幕的寬度和高度
+        console.log(window.screen.width, window.screen.height);
+        // 取得網址列的內容
+        console.log(window.location.href);
+        // 更改網址列的內容 (跳轉網頁)
+        // window.location.href = "https://www.google.com/"
+
+        // 認識 document 物件
+        console.dir(document);
+        // 取得網頁標籤
+        console.log(document.title);
+        // 更改網頁標籤
+        document.title = "新分頁";
+        // 取得 body 標籤
+        console.log(document.body);
+        // 更改網頁主畫面內容 (body標籤的內文)
+        document.body.innerHTML = "HELLO HTML DOM";
+    </script>
+</body>
+</html>

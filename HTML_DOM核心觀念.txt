@@ -1,0 +1,9 @@
+HTML DOM ==> 根據HTML標籤，建立的物件
+
+每個HTML標籤在JavaScript引擎中都有對應的 "標籤物件"，稱為 HTML Element
+把HTML標籤物件，串接在一起，成為物件結構就是 HTML DOM
+HTML DOM (Document Object Model)
+
+瀏覽器如何管理、繪製HTML網頁:
+** HTML程式碼 ==> HTML DOM in JavaScript ==> 網頁畫面 ** 
+
