@@ -1,0 +1,83 @@
+<!--
+    事件的種類 :
+        click 滑鼠點擊
+        mouseover 滑鼠移入
+        mouseout 滑鼠移出
+        mousedown 滑鼠按下
+        mouseup 滑鼠放開
+
+        註冊事件處理函式，在某個標籤上，將函式與事件作對應:
+            基本語法 :
+                <div 事件名稱="程式碼">標籤內文</div>
+                <button 事件名稱="程式碼">標籤內文</button>
+            範例程式 :
+                <div onclick="change()">點擊</div>
+        
+        事件處理範例一 :
+            點擊改變標籤本身內文
+            <div onclick="change(this)">原本的內文</div>
+            <script>
+                function change(elem){
+                    elem.innetHTML="新的內文";
+                }
+            </script>
+        
+        事件處理範例二 :
+            滑鼠按住、放開同時運作
+            <button onmousedown="down(this)"
+                    onmouseup="up(this)"
+            >按鈕</button>
+            <script>
+                function down(elem){
+                    elem.style.color="red";
+                }
+                function up(elem){
+                    elem.style.color="blue";
+                }
+            </script>
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 事件處理</title>
+    <style>
+        .bit{
+            background-color: #00ffff;
+            padding: 20px;
+            border-radius: 10px; /*方角變圓*/
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h3>事件處理的練習</h3>
+    <span 
+        class="bit" 
+        onmouseover="over(this)" onmouseout="out(this)"
+        onmousedown="down(this)" onmouseup="up(this)">
+    點我</span>
+    <span 
+        class="bit" 
+        onmouseover="over(this)" onmouseout="out(this)"
+        onmousedown="down(this)" onmouseup="up(this)">
+    第二個按鈕</span>
+    <script>
+        function up(elem){
+            elem.style.fontWeight = "normal";
+        }
+        function down(elem){
+            elem.style.fontWeight = "bold";
+        }
+        function over(elem){
+            elem.style.backgroundColor = "#00ff00";
+            elem.style.fontSize = "30px";
+        }
+        function out(elem){
+            elem.style.backgroundColor = "#00ffff";
+        }
+    </script>
+</body>
+</html>
