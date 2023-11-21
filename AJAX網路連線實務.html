@@ -1,0 +1,56 @@
+<!--
+    使用 fetch 函式 :
+        fetch(網址)then(function(回應物件){
+            console.log(回應物件);
+        });
+        
+    處理不同格式的回應 :
+        取得純文字的回應 :
+            fetch(網址)then(function(reponse){
+                return response.text(); // 做資料解讀
+        }).then(function(data){
+                console.log(data); // 純文字資料
+        });
+        取得 JSON 格式的回應 :
+            fetch(網址)then(function(reponse){
+                return response.json(); // 做資料解讀
+        }).then(function(data){
+                console.log(data); // JSON格式資料
+        });
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX/XHR 網路連線實務</title>
+</head>
+<body>
+    <h3>AJAX/XHR 網路連線實務</h3>
+    <button onclick="getdata()">連線取得資料</button>
+    <div id="result"></div>
+    <script>
+        function getdata(){
+            //利用 fetxh 進行連線並取得資料
+            fetch("https://cwpeng.github.io/live-records-samples/data/products.json").then(function(response){
+                return response.json();
+            }).then(function(data){
+                // 已經取得資料
+                let result = document.querySelector("#result");
+                result.innerHTML="";
+                for(let i=0; i<data.length; i++){
+                    // 抓取陣列中的資料
+                    let products = data[i];
+                    // 將頁面中的資料更新成我們連線取得的資料
+                    result.innerHTML += "<div>"+products.name+
+                                        ","+products.price+
+                                        ","+products.description+
+                                        "</div>"; 
+                }
+                
+            });
+        }
+    </script>
+</body>
+</html>
