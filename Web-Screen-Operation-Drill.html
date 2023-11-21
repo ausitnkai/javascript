@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網頁畫面操作演練</title>
+    <style>
+        .changetype{
+            font-size: 20px;
+            color: blue;
+        }
+        .changeKeywordType{
+            font-size: 30px;
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span onclick="changToAbout()">關於我</span>
+        <span onclick="changToExps()">學經歷</span>
+    </div>
+    <hr/>
+    <div id="about">大家好我是
+        <!--點擊名字前往個人github網站-->
+        <span id="personal" onclick="goTogithub()">凱凱</span>
+    </div>
+    
+        <div id="exps" style="display: none;">我是
+        <!--點擊實踐資訊系會跳到實踐資訊系官網-->
+        <span id="exps_shool" onclick="goToSchoolWebsite()">實踐資訊系</span>
+        畢業，目前求職中</div>
+    <script>
+        function changToExps(){
+            // 先取的標籤
+            let about = document.querySelector("#about");
+            let exps = document.querySelector("#exps");
+            let exps_shool = document.querySelector("#exps_shool");
+            // 在對標籤做操作
+            about.style.display = "none";
+            exps.style.display = "block";
+            exps.className = "changetype";
+            exps_shool.className = "changeKeywordType";
+        }
+        function changToAbout(){
+            // 先取的標籤
+            let about = document.querySelector("#about");
+            let exps = document.querySelector("#exps");
+            let personal = document.querySelector("#personal");
+            // 在對標籤做操作
+            about.style.display = "block";
+            about.className = "changetype";
+            personal.className = "changeKeywordType";
+            exps.style.display = "none";
+        }
+        function goToSchoolWebsite(){
+            window.location.href = "https://itm.usc.edu.tw/";
+        }
+        function goTogithub(){
+            window.location.href = "https://github.com/ausitnkai";
+        }
+    </script>
+</body>
+</html>
