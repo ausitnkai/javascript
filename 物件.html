@@ -1,0 +1,82 @@
+<!--
+    建立空白物件，可放進變數做後續操作
+        new Object()
+    程式範例:
+        let obj = new Object();
+
+    建立物件成員:
+        物件.成員名稱 = 資料
+    程式範例:
+        let obj = new Object();
+        obj.x = 3; <-- 成員"非函式"，稱為"屬性"
+        obj.y = 10;
+        obj.show = function(){ <-- 成員是"函式"，稱為"方法"
+            console.log("Hello");
+        };
+
+    使用物件 可以透過 "." 存取物件的成員:
+        物件.成員名稱
+    程式範例:
+        console.log(obj);
+        console.log(obj.x + obj.y);
+        obj.show();
+-->
+<!--
+    物件"方法"中的 this 關鍵字
+    程式範例:
+    let obj = new Object();
+    obj.x = 3;
+    obj.y = 10;
+    obj.show = function(){ <-- 成員是"函式"，稱為"方法"
+        console.log(this.x, this.y); <--在 "物件的方法中" 使用this代表物件本身
+    };
+-->
+<!--
+    JSON(JavaScript Object Notation) 物件表示法 ==> 建立物件的簡單寫法:
+        {成員名稱:資料, 成員名稱:資料,....}
+    程式範例:
+        let obj1 = {};
+        let obj2 = {
+            x:3,
+            y:4,
+            show:function(){
+                console.log(this.x, this.y);
+            }
+        };
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物件基礎</title>
+</head>
+<body>
+    <script>
+        /*
+        // 建立物件
+        let man = new Object();
+        man.age = 18;
+        man.name = "小明";
+        man.talk = function(){
+            //物件的方法中使用this
+            console.log("Hello 我是" + this.name+"今年"+this.age);
+        }
+        // 使用物件
+        console.log(man.age>20); // 使用物件的成員
+        man.talk(); // 呼叫物件的方法
+        */
+
+        // 使用 JSON 建立物件
+        let man={
+            age:15,
+            name:"小文",
+            talk:function(){
+                console.log("Hello 我是" + this.name + "今年" + this.age);
+            }
+        };
+        man.talk();
+
+    </script>
+</body>
+</html>
