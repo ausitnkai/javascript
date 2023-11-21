@@ -10,7 +10,7 @@
         //while 迴圈基本語法
         let y = 1, x = 0, n = 0;
         let result = 1;
-        while(n < 10){ //費氏數列
+        while(n < 3){ //費氏數列
             console.log("第"+n+"次的X:"+x);
             console.log("第"+n+"次的Y:"+y);
             result = x+y;
@@ -22,8 +22,20 @@
         console.log("The final anser:"+result);
 
         //for 迴圈基本語法
+        /*
         for(let a=3; a>0; a--){
             console.log(a + "早安你好 ^_^");
+        }
+        */
+       
+        // break 的使用
+        let n1 = 0;
+        while(n1<5){
+            if(n == 3){
+                break;
+            }
+            console.log(n1);
+            n1++;
         }
     </script>
 </body>
