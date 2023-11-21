@@ -1,0 +1,68 @@
+<!--
+    陣列物件 Array : 按照順序存放其他資料的容器
+        JavaScript內建的物件
+        利用右順序的資料，管理裡面的資料
+    
+    建立空白陣列:
+        new Array() 或 []
+    程式範例:
+        let arr = []
+
+    新增陣列內的資料:
+        陣列.push(資料)
+    程式範例:
+        let arr = []
+        arr.push(12);
+        arr.push(8);
+    
+    根據資料的編號取得資料:
+        陣列[編號]
+    程式範例:
+        let arr = []
+        arr.push(12);
+        arr.push(8);
+        console.log(arr[0]); ==> 12
+        console.log(arr[1]); ==> 8
+        console.log(arr[2]); ==> null,因為現在還沒有資料存在
+    
+    利用陣列的 length 屬性取得陣列的長度
+        陣列.length
+    程式範例:
+        let arr = []
+        console.log(arr.length) ==> 會顯示 0 因為目前內部沒有資料
+        arr.push(12);
+        arr.push(8);
+        console.log(arr.length) ==> 會顯示 2 因為新增了兩筆資料
+
+    同時建立陣列物件與資料, 資料中間用逗號隔開:
+        [資料,資料<,....]
+    程式範例:
+        let arr = [3,4];
+        arr.push(0);
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 建立陣列物件
+        let grade = [85, 62];
+        grade.push(70);
+        grade.push(84);
+        
+        // 利用 for 逐一取得陣列中的資料:
+        //計算平均總合
+        let sum = 0;
+        for(let i=0; i < grade.length; i++){
+            sum = sum + grade[i];
+        }
+        let avg = sum/grade.length;
+        console.log(avg);
+    </script>
+</body>
+</html>
