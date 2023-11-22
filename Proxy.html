@@ -1,0 +1,61 @@
+<!--
+    Proxy 代理物件基礎--現代前端框架經常使用的核心技術
+    +---------------------------------------------+
+    其目的是用來 "代理" 目標物件: 
+        意思是 **改變、中介** 目標物件的基礎操作
+    可能用途 :
+        1. 取得經過加工處理的屬性資料
+        2. 驗證物件的屬性資料
+        3. 綁定物件的屬性資料和使用者介面
+
+    使用 Proxy 要先建立代理物件->使用代理物件 :
+        建構式: new Proxy (目標物件,包裝處理函式的物件);
+
+        建立 Proxy : 
+            let 目標物件=某個物件的實體內容;
+
+            let ref = new Proxy(目標物件,{
+                get:function(目標物件,屬性名稱){
+                    return 回傳自定義的屬性資料;
+                }
+            });
+        使用 Proxy :
+        ** 取得物件屬性時，執行上述get函式並取得回傳值 **
+            console.log(ref.x);
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 建立代理物件
+        let data={
+            price:Number(window.prompt("請輸入價格")),
+            count:Number(window.prompt("請輸入個數"))
+        };
+        let proxy = new Proxy(data,{
+            // 使用代理物件取得屬性資料的時候，會對應的函式
+            get:function(originalData,target){
+                // 如果想要取得的屬性名稱式 total 就在這邊做一個乘法得到總價
+                if(originalData==="total"){
+                    return data.price*data.count;
+                }
+                // 如果是其他的屬性，就按照原來的目標物件做回應
+                else{
+                    return originalData[target];
+                }
+            }
+        });
+        // 使用代理物件
+        console.log("總價:", proxy.total);
+        console.log("單價:", proxy.price);
+        console.log("多少人買:", proxy.person);//如果裡面沒有該屬性，就會undefined
+        
+    </script>
+</body>
+</html>
