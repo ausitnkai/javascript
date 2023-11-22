@@ -1,0 +1,42 @@
+<!-- 其餘運算符號 ==> 三個點 "..."
+        1. 運用在解構賦值
+        2. 運用在函式中
+    -------------------------------
+    ** <其餘運算必須放在最後面使用> **
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其餘運算的運用</title>
+</head>
+<body>
+    <script>
+        // 【其餘】運算符號 : ...
+        /* 運用在陣列解構賦值
+        let arr = [1,2,3,4,5,6,7,8,9,0]
+        let [n1,n2,...data] = arr; // data 就是額外產生的陣列
+        console.log(n1,n2,data);
+        */
+        /* 運用在物件解構賦值
+        let obj = {a:1, b:2, c:3, d:4, e:5, f:6};
+        // 可以不用照順序使用其餘運算符，其餘運算符還是要放最後
+        let {a,d,...data} = obj; 
+        console.log(a,d,data);
+        */
+        //運用在函式中
+        function add(n1,n2,...args) { // "...args" => 其餘參數 rest parameter
+            // console.log(n1,n2,args);
+            let total = n1+n2;
+            for(let i=0; i<args.length; i++){
+                total = total+args[i];
+            }
+            console.log(total);
+        }
+        add(1,5);
+        add(10,0,8,9,12); //39
+    </script>
+</body>
+</html>
