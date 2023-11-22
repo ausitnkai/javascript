@@ -1,6 +1,6 @@
 <!--javascript-->
 <script setup> 
-    let message = "<u>Hello Vue</u>";
+    let message = "Hello " + window.prompt("請輸入姓名","");
     let checked = true;
     let level=0;
     let topic=["HTML","CSS","JavaScript","Vue.js"];
@@ -16,10 +16,8 @@
 <!--HTML-->
 <template> 
     <nav>基本導覽列</nav>
-    <!--使用 "v-html" 產生效果效果-->
-    <main v-html="message.toUpperCase()">
     
-    </main>
+    <div v-html="message" class="animation"></div>
 
     <!--使用 "v-bind:" 來帶入在 javascript 中設定的屬性的值-->
     <!--三元運算 : 判斷對象 ? 結果一 : 結果二-->
@@ -46,4 +44,26 @@
     main{background-color: rgb(193, 158, 224);}
     .dark{color: #666666;}
     .light{color: #d8d7d7;}
+    .animation{
+        /* 建立要做動化效果的區塊 */ 
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: relative;
+        /* 動畫效果的取名 */ 
+        animation-name: animate;
+        animation-duration: 7s;
+        /* 調整內部文字完全置中 */ 
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+    }
+    /* 動畫效果的設定 */
+    @keyframes animate {
+        0% {background-color: #f7d3d3; left: 0px; top: 0px;}
+        50% {background-color: rgb(253, 125, 176); left:500px; top: 30px;}
+        100% {background-color: rgb(255, 0, 0); left: 1000px; top: 50px;border-radius: 50%;}
+    }
+
 </style>
