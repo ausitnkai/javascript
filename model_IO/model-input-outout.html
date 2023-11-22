@@ -1,0 +1,33 @@
+<!--
+    使用模組輸出使用 default 關鍵字 :
+        export default 變數名稱;
+
+    輸入時可使用任意名稱 :
+        import 變數名稱 from "模組檔案路徑";
+    
+    其他/非預設的輸出輸入 :
+    ** 輸出輸入的名稱必須相同 ** 
+    輸出 :
+        export{變數名稱,變數名稱,...};
+    輸入 :
+        import {變數名稱,變數名稱,...} from "模組檔案路徑";
+
+    與法整合 :
+        模組檔案名稱 lib.js :
+            let x=3; let obj={x:3,y:4}; let data=[5,6,7];
+            export {x as default, obj, data};
+        主程式 :
+            imptort x, {obj, data} from "./lib.js";
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模組輸入與輸出</title>
+</head>
+<body>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
