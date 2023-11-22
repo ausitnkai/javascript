@@ -1,0 +1,61 @@
+<!-- JavaScript 解構賦值 Destructuring Assignment 
+    解構 : 把陣列或物件中的資料拆開
+    賦值 : 將拆開的資料分別放入個別的變數中
+
+    陣列解構賦值的基本操作 : 
+    **不需要一個一個去做賦值**
+        let arr = [3,4,5];
+        let[d1,d2,d3] = arr;
+
+    物件解構賦值的基本操作 :
+        let obj = {x:3, y:4};
+        let{x, y} = obj;
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解構賦值</title>
+</head>
+<body>
+    <script>
+        // 陣列解構賦值
+        let arr = [3,4,5];
+        /* 原作法
+        let d1 = arr[0];
+        let d2 = arr[1];
+        let d3 = arr[2];
+        */
+        let d1,d2,d3, d4;
+        [d1,d2,d3=2,d4=6] = arr; 
+        // 當陣列中的位置上有資料，預設值會被覆蓋掉
+        //console.log(d1,d2,d3,d4);
+
+        // 變數資料交換
+        let a = 3;
+        let b = 5;
+        [a, b] = [b, a];
+        //console.log(a,b);
+
+        // 物件解構賦值
+        let obj = {x:3, y:4, z:5};
+        /* 原做法
+        let x = obj.x;
+        let y = obj.y;
+        */
+        let newx, newy, newz;
+        // 給予物件新的變數名稱
+        ({x:newx, y:newy, z:newz} = obj);
+        // 賦予值 ({x, y, z=10} = obj);
+        // console.log(newx,newy,newz);
+
+        // 統整函數的物件參數
+        function add({n1, n2}){ // 這邊就是一個物件解構賦值
+            console.log(n1+n2);
+        }
+        add({n1:3,n2:4});
+    </script>
+</body>
+</html>
