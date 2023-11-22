@@ -1,0 +1,71 @@
+<!-- 物件的拷貝/複製
+
+    物件沒有被實際拷貝/複製的情況
+    let a = {x:3,y:4};
+    let b = a; 
+    ==> 沒有建立新物件，b只是參考到物件的實體(相當於C語言中"b=&a"的概念)
+    b.x = 5; ==> 這樣會間接改到 a 裡面的資料
+    console.log(a.x) ==> 印出 5
+-------------------------------------------------------------------
+    物件的拷貝/複製
+    let a = {x:3,y:4};
+    let b = {...a};
+    b.x = 5;
+    console.log(a.x) ==> 印出 3
+-------------------------------------------------------------------
+    ** shadow copy淺拷貝: 僅拷貝物件的第一層資料 **
+
+    let a = {x:3,Y:4,data:[1,2,3]}; ==> 這個物件有兩層資料
+    let b = {...a};
+
+    * 使用 Object.assign() *
+    let c = Object.assign({},a);
+    b.data[0] = 4; // 因為只有淺拷貝所以位於第二層的資料data[0]會被改變
+    console.log(a.data[0]); ==> 印出 4
+-------------------------------------------------------------------
+    <===    deep copy深拷貝: 拷貝整個物件中的資料   ===>
+    
+    ** 使用 JSON.stringify() 將物件自串化(Serialize) **
+    ** 使用 JSON.parse() 根據字串化的資料重新建立物件結構，完成深拷貝 **
+
+    let a = {x:3,Y:4,data:[1,2,3]};
+    * 將物件結構字串化 *
+    let str = JSON.stringify(a);
+    * 根據字串化的資料重新建立物件結構 *
+    let b = JSON.parse(str);
+    b.data[0] = 4; // 以上完成深拷貝，因此操作不影響data
+    console.log(a.data[0]); ==> 印出 1
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>物件的深拷貝與淺拷貝</title>
+</head>
+<body>
+    <script>
+        // 淺拷貝 
+        let arr = [7, 5, {x:1,y:2}];
+
+        let b = [...arr]; // 進行淺拷貝
+        
+        b[0] = 10;
+        b[2].x = 3;
+        console.log(arr[0]); // 這是第一層不會被影像
+        console.log(arr[2].x); // 這是第二層以上所以會被影響
+
+        // 深拷貝
+        let arr2 =  [7, 5, { x:1, y:2, z:[0,1,2] } ]; // 這個陣列有三層
+
+        // 進行深拷貝 ，這邊會複製一份陣列物件給 newb 使用
+        let newb = JSON.parse(JSON.stringify(arr2)); 
+
+        newb[2].x = 3;
+        newb[2].z[0] = 10;
+        console.log(arr2[2].x); // 第二層的資料不會被改變
+        console.log(arr2[2].z[0]); // 第三層的資料不會被改變
+    </script>
+</body>
+</html>
