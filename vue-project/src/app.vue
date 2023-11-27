@@ -37,48 +37,50 @@
 <!--HTML-->
 <template> 
     <nav>基本導覽列</nav>
-    
-    <div v-html="message" class="animation"></div>
+    <main>
+        <div v-html="message" class="animation"></div>
 
-    <!--使用 "v-bind:" 來帶入在 javascript 中設定的屬性的值-->
-    <!--三元運算 : 判斷對象 ? 結果一 : 結果二-->
-    <div :class="checked ? 'dark':'light'">操作標籤屬性</div>
+        <!--使用 "v-bind:" 來帶入在 javascript 中設定的屬性的值-->
+        <!--三元運算 : 判斷對象 ? 結果一 : 結果二-->
+        <div :class="checked ? 'dark':'light'">操作標籤屬性</div>
 
-    <!-- vue 的 if、if...else、else判斷式 -->
-    <div v-if="level===3">大神</div>
-    <div v-else-if="level===2">資深</div>
-    <div v-else-if="level===1">中階</div>
-    <div v-else>
-        <div>入門</div>
-        <ul>
-            <!-- vue 的 for 迴圈應用於陣列-->
-            <!--提取陣列的索引號-->
-            <li v-for="(name,index) in topic">{{ index }} - {{ name }}</li>
-        </ul>
-    </div>
-    <hr class="hr-twill-colorful">
+        <!-- vue 的 if、if...else、else判斷式 -->
+        <div v-if="level===3">大神</div>
+        <div v-else-if="level===2">資深</div>
+        <div v-else-if="level===1">中階</div>
+        <div v-else>
+            <div>入門</div>
+            <ul>
+                <!-- vue 的 for 迴圈應用於陣列-->
+                <!--提取陣列的索引號-->
+                <li v-for="(name,index) in topic">{{ index }} - {{ name }}</li>
+            </ul>
+        </div>
+        <hr class="hr-twill-colorful">
 
-    <!-- vue 的 for 迴圈應用於物件-->
-    <!--使用v-bind或簡寫的冒號（:）來動態綁定 href 屬性-->
-    <div v-for="(value, key) in objTopic">推薦 {{ key }} 的
-        <a :href="value" target="_blank">相關介紹</a>
-    </div>
-    <hr class="hr-twill-colorful">
+        <!-- vue 的 for 迴圈應用於物件-->
+        <!--使用v-bind或簡寫的冒號（:）來動態綁定 href 屬性-->
+        <div v-for="(value, key) in objTopic">推薦 {{ key }} 的
+            <a :href="value" target="_blank">相關介紹</a>
+        </div>
+        <hr class="hr-twill-colorful">
 
-    <!--基本事件處理-->
-    <div @click="handler" @mouseover.once="mouseOverHandler">點我</div>
-    <!--將預設事件處理取消-->
-    <a @click.prevent="handler" href="https://github.com/ausitnkai">我的網站</a>
-    <hr class="hr-twill-colorful">
+        <!--基本事件處理-->
+        <div @click="handler" @mouseover.once="mouseOverHandler">點我</div>
+        <!--將預設事件處理取消-->
+        <a @click.prevent="handler" href="https://github.com/ausitnkai">我的網站</a>
+        <hr class="hr-twill-colorful">
 
-    <!--響應式狀態-->
-    <div :class="state.className">{{ state.text }}</div>
-    <button @click="hit">點我</button>
-
+        <!--響應式狀態-->
+        <div :class="state.className">{{ state.text }}</div>
+        <button @click="hit">點我</button>
+    </main>
 </template>
 <!--CSS-->
 <style scoped> 
-    main{background-color: rgb(193, 158, 224);}
+    main{
+        background-color: rgb(239, 220, 255);
+    }
     .dark{color: #666666;}
     .light{color: #d8d7d7;}
     .animation{
