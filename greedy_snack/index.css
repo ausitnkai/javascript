@@ -1,0 +1,16 @@
+#canvas{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+#button{
+    /*透過自動調整座右邊距達到水平置中*/
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+h2{
+    /*利用 Flexbox 切版工具來達到水平置中*/
+    display: flex;
+    justify-content: center;
+}
