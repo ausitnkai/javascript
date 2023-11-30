@@ -117,16 +117,19 @@ function  updataeCanva() {
     context.fillStyle = "black";
     context.fillRect(0,0,canva.width,canva.height);
 
-    // 畫出蛇
+    // 畫出圓形蛇
     context.fillStyle = "lime";
     for(var i=0; i<snake.body.length; i++){
-        context.fillRect(
-            snake.body[i].x * BLOCK_SIZE+1, 
-            snake.body[i].y * BLOCK_SIZE+1,
-            // 將每個格子切開
-            BLOCK_SIZE-1,
-            BLOCK_SIZE-1
+        context.beginPath();
+        context.arc(
+            snake.body[i].x * BLOCK_SIZE + BLOCK_SIZE/2, // 第i個蛇身x座標
+            snake.body[i].y * BLOCK_SIZE + BLOCK_SIZE/2, // 第i個蛇身y座標
+            // 底下是圓的畫法
+            BLOCK_SIZE/2,
+            0,
+            2 * Math.PI
         );
+        context.fill();
     }
 
     // 畫出蘋果
