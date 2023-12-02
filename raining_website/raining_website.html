@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動態網頁背景試做</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rainyday.js/0.1.2/rainyday.min.js"></script>
+</head>
+<body>
+    <form class="card">
+        <!--互動式登入介面-->
+        <h1 class="title">Login</h1>
+        <div class="input-group">
+            <input type="email" class="form-control" placeholder="email"><label
+                for="email"
+                class="label"
+            >Email</label>
+        </div>
+        <div class="input-group">
+            <input type="password" class="form-control" placeholder="password"><label
+                for="password"
+                class="label"
+            >Password</label>
+        </div>
+        <!--記住登入帳號、密碼的功能-->
+        <div class="d-flex jusitfy-content-between">
+            <div class="form-check">
+                <input type="checkbox" id="remember" class="form-check-input">
+                <label for="remember" class="form-check-input">Remember me</label> 
+            </div>
+           <a href="#">Forgot password</a>
+        </div>
+        
+        <button type="submit" class="btn">Login</button>
+    </form>
+    <img src="rain.jpg" class="img">
+    <script>
+        const image = document.querySelector('.img');
+        image.onload = function () {
+            const rainEffect = new RainyDay({
+                image: this,
+                gravityAngle: Math.PI / 2,
+                fps: 30,
+            });
+            rainEffect.rain([
+                [10 , 8, 0.5], 
+                [7 ,4, 0.5], 
+                [2, 1., 20]
+            ]);
+        }
+    </script>
+</body>
+</html>
